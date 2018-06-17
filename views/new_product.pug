@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    .container
+        div.centered-form
+            h2 Add new product
+            form#new_product_form(action='' autocomplete='off')
+
+                div.form-group
+                    div.input-group
+                        span.input-group-addon
+                            i.glyphicon.glyphicon-file
+                        input.form-control(type='text' placeholder='Source link' name='sourceLink' required='')
+                    div.input-group
+                        span.input-group-addon
+                            i.glyphicon.glyphicon-shopping-cart
+                        select.form-control(name='sourceStore' required='')
+                            option(disabled='' selected='') Select one
+                            option(value='aliexpress') AliExpress
+                            option(value='ebay') Ebay
+
+                div.form-group
+                    div.input-group
+                        span.input-group-addon
+                            i.glyphicon.glyphicon-file
+                        input.form-control(type='text' placeholder='Selling link' name='sellingLink')
+                    div.input-group
+                        span.input-group-addon
+                            i.glyphicon.glyphicon-shopping-cart
+                        select.form-control(name='sellingStore' required='')
+                            option(disabled='' selected='') Select one
+                            option(value='aliexpress') Amazon
+                            option(value='ebay') Ebay
+                
+                div.form-group
+                    div.input-group
+                        span.input-group-addon
+                            i.glyphicon.glyphicon-tag
+                        input.form-control(type='text' placeholder='Description' name='description' required='')
+
+
+                div.form-group
+                    button.btn.btn-default(type='submit') Add

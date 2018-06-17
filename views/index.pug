@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  div(class='body-wrapper')
+
+    div.table-responsive.table-container
+      table.table.table-hover.table-dark
+        thead
+          tr 
+            th #
+            th Desciption
+            th Source Page
+            th Selling Page
+            th Currency
+            th Price
+            th DiscPrice
+            th CreatedAt
+            th Actions
+        tbody
+          each product, i in products
+            tr
+              td 
+                a(href='/product/' + product._id + '/history' target='_blank') #{product._id || '-'}
+              td #{product.description || '-'}
+              td
+                a(href=product.sourceLink target='_blank') #{product.sourceStore || '-'}
+              td 
+                a(href=product.sellingLink || '#' target='_blank') #{product.sellingStore || '-'}
+              td #{product.currency || '-'}
+              if (product._scans.length > 0) 
+                td #{product._scans[0]['price']}
+              else
+                td -
+              if (product._scans.length > 0) 
+                td #{product._scans[0]['discountedPrice']}
+              else
+                td -
+              td #{moment(product.createdAt).format('YYYY-MM-DD HH:mm:ss') || '-'}
+              td.actions
+                button.scan_action(type='button', class='btn btn-primary', data-id=product._id) Scan
+                button.delete_action(type='button', class='btn btn-danger') Delete

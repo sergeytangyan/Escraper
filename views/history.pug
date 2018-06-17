@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  div(class='body-wrapper')
+
+    .row
+      .col-xs-4
+        div.table-responsive.table-container
+          table.table.table-hover.table-dark.table-bordered-external
+            tbody
+              tr
+                th #
+                td #{product._id}
+              tr
+                th Description
+                td #{product.description}
+              tr
+                th Currency
+                td #{product.currency}
+              tr
+                th Source Page
+                td
+                  a(href=product.sourceLink target='_blank') #{product.sourceStore || '-'}
+              tr
+                th Selling Page
+                td 
+                  a(href=product.sellingLink || '#' target='_blank') #{product.sellingStore || '-'}
+              tr
+                th Actions
+                td.actions
+                  button.scan_action(type='button', class='btn btn-primary', data-id=product._id) Scan
+                  button.delete_action(type='button', class='btn btn-danger') Delete
+
+      .col-xs-8
+        div.table-responsive.table-container
+          table.table.table-hover.table-dark.table-bordered-external
+            thead
+              tr 
+                th #
+                th Price
+                th DiscPrice
+                th ScannedAt
+            tbody
+              each scan, i in product._scans
+                tr
+                  td #{scan._id || '-'}
+                  td #{scan.price || '-'}
+                  td #{scan.discountedPrice || '-'}
+                  td #{moment(scan.createdAt).format('YYYY-MM-DD HH:mm:ss') || '-'}

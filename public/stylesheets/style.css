@@ -1,0 +1,50 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+table {
+  width: 95%;
+}
+
+th, td {
+  vertical-align: middle !important;
+  text-align: center;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 150px;
+  font-size: 13px;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.table-container{
+  width: 95%;
+  margin: 0 auto;
+}
+
+.table-bordered-external {
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+
+.body-wrapper{
+  padding: 45px 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.navbar {
+  border-radius: 0;
+}
+
+.centered-form {
+  width: 70%;
+  margin: 0 auto;
+}
