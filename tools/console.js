@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const dbMaster = require('./dbMaster');
 const priceScanner = require('../services/priceScanner');
 
