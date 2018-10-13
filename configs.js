@@ -1,6 +1,6 @@
-module.exports.senderEmail = 'sergeytangyan@gmail.com';
-module.exports.senderPassword = 'gpgxtmegxgskbvis';
-module.exports.receiverEmail = 'g.grigoryan666@gmail.com';
+module.exports.senderEmail = '';
+module.exports.senderPassword = '';
+module.exports.receiverEmail = '';
 
 module.exports.aliexpress = {
     priceSelector: '#j-sku-price',
